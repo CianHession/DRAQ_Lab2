@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
-import { Header } from './Components/header';
-import { Footer } from './Components/footer';
 import { Content } from './Components/content';
+import  Read  from './Components/read';
+import  Create  from './Components/create';
+import  Movies  from './Components/movies';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
@@ -14,7 +16,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-
+          
           <Navbar bg="primary" variant="dark">
             <Container>
               <Navbar.Brand href="#home">Navbar</Navbar.Brand>
@@ -27,9 +29,9 @@ class App extends Component {
           </Navbar>
           <br />
           <Switch>
-            <Route path='/' component={Content} exact />
-            <Route path='/create' component={Header} exact />
-            <Route path='/read' component={Footer} exact />
+            <Route path='/' exact><Content/></Route>
+            <Route path='/create' exact><Create></Create></Route>
+            <Route path='/read' exact><Read></Read></Route>
           </Switch>
         </div>
       </Router>
